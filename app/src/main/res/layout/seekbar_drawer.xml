@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:translationX="-200dp"
+    android:layout_height="match_parent"
+    android:id="@+id/seekbar_drawer"
+    android:background="@drawable/seekbar_back"
+    android:elevation="15dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="5dp"
+
+        >
+
+
+    <RelativeLayout
+        android:id="@+id/sc"
+        android:layout_width="38dp"
+        android:layout_height="225dp"
+        android:background="@drawable/setting_back_rec"
+        android:elevation="8dp"
+        android:layout_centerInParent="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textSize="24dp"
+            android:layout_alignTop="@+id/sc"
+            android:elevation="20dp"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="32dp"
+            android:layout_alignBottom="@+id/sc"
+            android:elevation="20dp"
+            android:layout_centerHorizontal="true"/>
+
+
+
+    <com.example.businesscardmaker.widget_utils.VerticalSeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="70dp"
+        android:elevation="10dp"
+        android:layout_centerInParent="true"
+        android:layout_height="280dp"
+        android:progressDrawable="@drawable/seekbar_drawable"
+        android:thumb="@null"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
