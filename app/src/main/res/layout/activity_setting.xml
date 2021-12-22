@@ -23,8 +23,8 @@
             android:padding="10dp">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/ic_round_home_24"
                 app:tint="@color/black" />
@@ -37,12 +37,11 @@
 
                 android:text="Home"
                 android:textColor="@color/black"
-                android:textSize="22dp"/>
+                android:textSize="18dp"/>
 
         </LinearLayout>
-
         <LinearLayout
-            android:id="@+id/setting_share"
+            android:id="@+id/setting_user_detail"
             android:foreground="?selectableItemBackgroundBorderless"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -52,8 +51,34 @@
             android:padding="10dp">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_baseline_format_align_left_24"
+                app:tint="@color/black" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:text="User Details"
+                android:textColor="@color/black"
+                android:textSize="18dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/setting_share"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/setting_user_detail"
+            android:layout_marginHorizontal="10dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/ic_round_share_24"
                 app:tint="@color/black" />
@@ -65,7 +90,7 @@
                 android:layout_marginStart="10dp"
                 android:text="Share with friends"
                 android:textColor="@color/black"
-                android:textSize="22dp" />
+                android:textSize="18dp" />
 
         </LinearLayout>
 
@@ -80,8 +105,8 @@
             android:padding="10dp">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/ic_round_star_rate_24"
                 app:tint="@color/black" />
@@ -94,23 +119,23 @@
 
                 android:text="Rate the app"
                 android:textColor="@color/black"
-                android:textSize="22dp" />
+                android:textSize="18dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/setting_policy"
-            android:foreground="?selectableItemBackgroundBorderless"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/setting_rate"
             android:layout_marginHorizontal="10dp"
+            android:foreground="?selectableItemBackgroundBorderless"
             android:orientation="horizontal"
             android:padding="10dp">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/ic_round_privacy_tip_24"
                 app:tint="@color/black" />
@@ -123,7 +148,7 @@
 
                 android:text="Privacy policy"
                 android:textColor="@color/black"
-                android:textSize="22dp" />
+                android:textSize="18dp" />
 
         </LinearLayout>
 
@@ -138,8 +163,8 @@
             android:padding="10dp">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/ic_round_apps_24"
                 app:tint="@color/black" />
@@ -152,7 +177,7 @@
 
                 android:text="More Apps"
                 android:textColor="@color/black"
-                android:textSize="22dp"/>
+                android:textSize="18dp"/>
 
         </LinearLayout>
 
@@ -167,8 +192,8 @@
             android:padding="10dp">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/ic_round_exit_to_app_24"
                 app:tint="@color/black" />
@@ -179,7 +204,7 @@
                 android:layout_marginStart="10dp"
                 android:text="Exit"
                 android:textColor="@color/black"
-                android:textSize="22dp"/>
+                android:textSize="18dp"/>
         </LinearLayout>
     </RelativeLayout>
 
@@ -202,15 +227,16 @@
                 android:layout_height="100dp"
                 android:src="@drawable/bsns_crd_mkr_logo"/>
         </androidx.cardview.widget.CardView>
+
         <TextView
-            android:layout_below="@+id/setting_banner_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Business Card Maker"
+            android:layout_below="@+id/setting_banner_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:text="Business &amp; Visiting Card maker"
             android:textColor="@color/black"
             android:textSize="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_centerHorizontal="true"
 
             />
 
@@ -223,7 +249,7 @@
         android:id="@+id/setting_toolbar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/purple_700"
+        android:background="@drawable/banner"
         android:contentInsetLeft="0dp"
         android:contentInsetStart="0dp"
         app:contentInsetLeft="0dp"
@@ -238,8 +264,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
 
             <ImageButton
                 android:id="@+id/back"

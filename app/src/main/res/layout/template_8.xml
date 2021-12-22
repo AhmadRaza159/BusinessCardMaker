@@ -7,10 +7,87 @@
     android:layout_height="match_parent"
     android:background="@drawable/texture"
     tools:context=".EditCardActivity"
+    android:id="@+id/parent_surface"
     tools:ignore="MissingPrefix">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/the_back_view"
+        android:layout_width="508dp"
+        android:layout_height="320dp"
+
+        android:layout_centerInParent="true">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="10dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_surface_back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/bck_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.business.card.visiting.cardmaker.widget_utils.DragableView
+                    android:id="@+id/c_back_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="90dp"
+                    android:tooltipText="Logo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/back_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/temp_logo" />
+                </com.business.card.visiting.cardmaker.widget_utils.DragableView>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageButton
+        android:id="@+id/save_btn"
+        android:layout_width="58dp"
+        android:layout_height="100dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/button_save" />
+    <ImageButton
+        android:id="@+id/bck_frnt_btn"
+        android:layout_width="58dp"
+        android:layout_height="100dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/button_back_side" />
+
+    //////////////////
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/the_view"
-        android:layout_width="560dp"
+        android:layout_width="508dp"
         android:layout_height="320dp"
         android:layout_centerInParent="true">
         <androidx.cardview.widget.CardView
@@ -22,10 +99,17 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/card_surface"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/card_back_8">
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/frnt_img"
+                    android:scaleType="centerCrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <com.example.businesscardmaker.widget_utils.DragableView
+                <com.business.card.visiting.cardmaker.widget_utils.DragableView
                     android:id="@+id/c_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -46,9 +130,9 @@
 
 
                         />
-                </com.example.businesscardmaker.widget_utils.DragableView>
+                </com.business.card.visiting.cardmaker.widget_utils.DragableView>
 
-                <com.example.businesscardmaker.widget_utils.DragableView
+                <com.business.card.visiting.cardmaker.widget_utils.DragableView
                     android:id="@+id/c_des"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -67,10 +151,10 @@
                         android:textColor="@color/white"
                         android:textSize="18dp"
                         android:textStyle="normal" />
-                </com.example.businesscardmaker.widget_utils.DragableView>
+                </com.business.card.visiting.cardmaker.widget_utils.DragableView>
 
 
-                <com.example.businesscardmaker.widget_utils.DragableView
+                <com.business.card.visiting.cardmaker.widget_utils.DragableView
                     android:id="@+id/c_content_des_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -86,9 +170,9 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:src="@drawable/card2_util_detail_icon_phone" />
-                </com.example.businesscardmaker.widget_utils.DragableView>
+                </com.business.card.visiting.cardmaker.widget_utils.DragableView>
 
-                <com.example.businesscardmaker.widget_utils.DragableView
+                <com.business.card.visiting.cardmaker.widget_utils.DragableView
                     android:id="@+id/c_content_des_mail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -104,9 +188,9 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:src="@drawable/card2_util_detail_icon_mail" />
-                </com.example.businesscardmaker.widget_utils.DragableView>
+                </com.business.card.visiting.cardmaker.widget_utils.DragableView>
 
-                <com.example.businesscardmaker.widget_utils.DragableView
+                <com.business.card.visiting.cardmaker.widget_utils.DragableView
                     android:id="@+id/c_content_des_web"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -122,9 +206,9 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:src="@drawable/card2_util_detail_icon_web" />
-                </com.example.businesscardmaker.widget_utils.DragableView>
+                </com.business.card.visiting.cardmaker.widget_utils.DragableView>
 
-                <com.example.businesscardmaker.widget_utils.DragableView
+                <com.business.card.visiting.cardmaker.widget_utils.DragableView
                     android:id="@+id/c_content_des_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -140,8 +224,8 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:src="@drawable/card2_util_detail_icon_addr" />
-                </com.example.businesscardmaker.widget_utils.DragableView>
-                <com.example.businesscardmaker.widget_utils.DragableView
+                </com.business.card.visiting.cardmaker.widget_utils.DragableView>
+                <com.business.card.visiting.cardmaker.widget_utils.DragableView
                     android:id="@+id/c_company_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -162,9 +246,9 @@
 
 
                         />
-                </com.example.businesscardmaker.widget_utils.DragableView>
+                </com.business.card.visiting.cardmaker.widget_utils.DragableView>
 
-                <com.example.businesscardmaker.widget_utils.DragableView
+                <com.business.card.visiting.cardmaker.widget_utils.DragableView
                     android:id="@+id/c_content_des_line"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -180,10 +264,10 @@
                         android:layout_width="3dp"
                         android:layout_height="120dp"
                         android:background="#7C7676" />
-                </com.example.businesscardmaker.widget_utils.DragableView>
+                </com.business.card.visiting.cardmaker.widget_utils.DragableView>
 
 
-                <com.example.businesscardmaker.widget_utils.DragableView
+                <com.business.card.visiting.cardmaker.widget_utils.DragableView
                     android:id="@+id/c_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -201,9 +285,9 @@
                         android:textColor="#FF888888"
                         android:textSize="14dp"
                         android:textStyle="normal" />
-                </com.example.businesscardmaker.widget_utils.DragableView>
+                </com.business.card.visiting.cardmaker.widget_utils.DragableView>
 
-                <com.example.businesscardmaker.widget_utils.DragableView
+                <com.business.card.visiting.cardmaker.widget_utils.DragableView
                     android:id="@+id/c_mail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -222,9 +306,9 @@
                         android:textColor="#FF888888"
                         android:textSize="14dp"
                         android:textStyle="normal" />
-                </com.example.businesscardmaker.widget_utils.DragableView>
+                </com.business.card.visiting.cardmaker.widget_utils.DragableView>
 
-                <com.example.businesscardmaker.widget_utils.DragableView
+                <com.business.card.visiting.cardmaker.widget_utils.DragableView
                     android:id="@+id/c_web"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -243,9 +327,9 @@
                         android:textColor="#FF888888"
                         android:textSize="14dp"
                         android:textStyle="normal" />
-                </com.example.businesscardmaker.widget_utils.DragableView>
+                </com.business.card.visiting.cardmaker.widget_utils.DragableView>
 
-                <com.example.businesscardmaker.widget_utils.DragableView
+                <com.business.card.visiting.cardmaker.widget_utils.DragableView
                     android:id="@+id/c_addr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -264,10 +348,10 @@
                         android:textColor="#FF888888"
                         android:textSize="14dp"
                         android:textStyle="normal" />
-                </com.example.businesscardmaker.widget_utils.DragableView>
+                </com.business.card.visiting.cardmaker.widget_utils.DragableView>
 
 
-                <com.example.businesscardmaker.widget_utils.DragableView
+                <com.business.card.visiting.cardmaker.widget_utils.DragableView
                     android:id="@+id/c_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -283,8 +367,8 @@
                         android:id="@+id/image_logo"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@mipmap/ic_launcher" />
-                </com.example.businesscardmaker.widget_utils.DragableView>
+                        android:src="@drawable/temp_logo" />
+                </com.business.card.visiting.cardmaker.widget_utils.DragableView>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -311,7 +395,8 @@
         android:layout_marginStart="50dp"
         />
     <include layout="@layout/widgets_menu"
-        android:layout_width="600dp"
+        android:layout_marginHorizontal="50dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"/>

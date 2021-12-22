@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/abel</item>
+        <item>@font/advent_pro</item>
+        <item>@font/alegreya</item>
+        <item>@font/antic</item>
+        <item>@font/anton</item>
+        <item>@font/asap</item>
+        <item>@font/atomic_age</item>
+        <item>@font/averia_sans_libre</item>
+        <item>@font/baloo</item>
+        <item>@font/francois_one</item>
         <item>@font/montserrat</item>
+        <item>@font/viga</item>
     </array>
 </resources>

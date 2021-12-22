@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Business &amp; Visiting Card maker</string>
+    <string name="preference_file_key">com.business.card.visiting.cardmaker</string>
 </resources>

@@ -1,59 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/side_menu"
     android:layout_width="250dp"
     android:layout_height="match_parent"
-    android:translationX="200dp"
-    android:id="@+id/side_menu"
     android:background="@drawable/edit_buttons_back"
     android:elevation="15dp"
-    >
+    android:translationX="200dp">
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="match_parent">
 
-        >
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-
+            android:layout_marginVertical="10dp"
             >
 
+            <ImageButton
+                android:id="@+id/edit_view"
+                android:layout_width="45dp"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:layout_height="75dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/button_edit_text" />
 
+            <ImageButton
+                android:id="@+id/btn_color"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:layout_width="45dp"
+                android:layout_height="75dp"
+                android:layout_below="@+id/edit_view"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/button_color" />
 
-    <ImageButton
-        android:id="@+id/edit_view"
-        android:layout_width="45dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/button_edit_text"
-        android:scaleType="centerCrop"
-        android:background="@android:color/transparent"
-        />
+            <ImageButton
+                android:id="@+id/btn_rotate_left"
+                android:layout_width="45dp"
+                android:layout_height="75dp"
+                android:layout_below="@+id/btn_color"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/transparent"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:scaleType="centerCrop"
+                android:src="@drawable/button_rotate_left" />
+            <ImageButton
+                android:id="@+id/btn_rotate_right"
+                android:layout_width="45dp"
+                android:layout_height="75dp"
+                android:layout_below="@+id/btn_rotate_left"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/transparent"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:scaleType="centerCrop"
+                android:src="@drawable/button_rotate_right" />
 
-    <ImageButton
-        android:id="@+id/btn_color"
-        android:layout_width="45dp"
-        android:layout_height="75dp"
-        android:layout_below="@+id/edit_view"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/button_color"
-        android:scaleType="centerCrop"
-        android:background="@android:color/transparent"
-        />
+            <ImageButton
+                android:id="@+id/btn_font"
+                android:layout_width="45dp"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:layout_height="75dp"
+                android:layout_below="@+id/btn_rotate_right"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/button_font" />
 
-    <ImageButton
-        android:id="@+id/btn_rotate"
-        android:layout_width="45dp"
-        android:layout_height="75dp"
-        android:layout_below="@+id/btn_color"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:background="@android:color/transparent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/button_rotate" />
+            <ImageButton
+                android:id="@+id/btn_style"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:layout_width="45dp"
+                android:layout_height="75dp"
+                android:layout_below="@+id/btn_font"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/button_style" />
 
 
         </RelativeLayout>

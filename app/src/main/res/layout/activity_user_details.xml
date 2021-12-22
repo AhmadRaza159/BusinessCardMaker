@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserDetailsActivity">
+    <RelativeLayout
+        android:id="@+id/bnr"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/banner">
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+
+            android:text="User Details"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_below="@id/bnr"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginTop="8dp"
+            android:elevation="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingVertical="20dp"
+            android:layout_marginHorizontal="10dp">
+
+
+            <EditText
+                android:id="@+id/user_name"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="You'r name"
+                android:paddingHorizontal="8dp"
+                android:background="@drawable/txt_back"
+                android:elevation="5dp"
+                android:layout_margin="7dp"
+                />
+            <EditText
+                android:id="@+id/user_des"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="You'r Designation"
+                android:paddingHorizontal="8dp"
+                android:background="@drawable/txt_back"
+                android:elevation="5dp"
+                android:layout_margin="7dp"/>
+            <EditText
+                android:id="@+id/user_phone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingHorizontal="8dp"
+                android:hint="Phone No"
+                android:background="@drawable/txt_back"
+                android:elevation="5dp"
+                android:layout_margin="7dp"/>
+            <EditText
+                android:id="@+id/user_email"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Email"
+                android:paddingHorizontal="8dp"
+                android:background="@drawable/txt_back"
+                android:elevation="5dp"
+                android:layout_margin="7dp"/>
+            <EditText
+                android:id="@+id/user_web"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Website"
+                android:paddingHorizontal="8dp"
+                android:background="@drawable/txt_back"
+                android:elevation="5dp"
+                android:layout_margin="7dp"/>
+            <EditText
+                android:id="@+id/user_addr"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Address"
+                android:paddingHorizontal="8dp"
+                android:background="@drawable/txt_back"
+                android:elevation="5dp"
+                android:layout_margin="7dp"/>
+            <EditText
+                android:id="@+id/user_company_name"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Company name"
+                android:paddingHorizontal="8dp"
+                android:background="@drawable/txt_back"
+                android:elevation="5dp"
+                android:layout_margin="7dp"/>
+            <Button
+                android:id="@+id/user_save_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/txt_back"
+                android:elevation="5dp"
+                />
+
+        </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </ScrollView>
+
+</RelativeLayout>

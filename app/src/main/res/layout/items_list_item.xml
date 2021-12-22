@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="130dp"
     android:layout_height="80dp"
+    android:foreground="?selectableItemBackgroundBorderless"
     android:gravity="center"
     android:layout_margin="3dp">
 
@@ -10,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:foreground="?selectableItemBackgroundBorderless"
         android:layout_centerHorizontal="true">
 
         <ImageView
@@ -18,12 +20,14 @@
             android:layout_height="30dp"
             android:layout_centerVertical="true"
             android:layout_marginStart="5dp"
+            android:foreground="?selectableItemBackgroundBorderless"
             android:src="@drawable/menu_addr" />
 
         <TextView
             android:id="@+id/menu_item_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:foreground="?selectableItemBackgroundBorderless"
             android:layout_centerVertical="true"
             android:layout_marginStart="5dp"
             android:layout_toRightOf="@+id/menu_item_logo"
@@ -39,6 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_below="@+id/menu_item_top"
         android:layout_height="wrap_content"
+        android:foreground="?selectableItemBackgroundBorderless"
         android:src="@drawable/menu_visible"
         android:paddingHorizontal="13dp"
         android:paddingVertical="10dp"/>

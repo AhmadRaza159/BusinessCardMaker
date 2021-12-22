@@ -44,7 +44,7 @@
 
 
 
-    <com.example.businesscardmaker.widget_utils.VerticalSeekBar
+    <com.business.card.visiting.cardmaker.widget_utils.VerticalSeekBar
         android:id="@+id/seekbar"
         android:layout_width="70dp"
         android:elevation="10dp"

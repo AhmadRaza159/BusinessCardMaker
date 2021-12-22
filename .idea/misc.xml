@@ -16,31 +16,35 @@
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/drawable/selected_item_background.xml" value="0.2203125" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/drawable/setting_back_rec.xml" value="0.2203125" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/drawable/transparent.xml" value="0.2046875" />
+        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/drawable/txt_back.xml" value="0.2203125" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/font/montserrat.xml" value="0.234375" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/activity_edit_card.xml" value="0.18854166666666666" />
-        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/activity_main.xml" value="0.1880095923261391" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/activity_privacy_policy.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/activity_setting.xml" value="0.22" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/activity_user_details.xml" value="0.20364583333333333" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/bottom_sheet.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/edit_buttons.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/items_list_item.xml" value="0.5" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/menu_opener_back.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/rename_diloag.xml" value="0.17552083333333332" />
+        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/save_dialog.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/seekbar_drawer.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/template_1.xml" value="0.33" />
-        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/template_10.xml" value="0.2" />
-        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/template_11.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/template_12.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/template_1.xml" value="0.18" />
+        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/template_10.xml" value="0.125" />
+        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/template_11.xml" value="0.12272727272727273" />
+        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/template_12.xml" value="0.22" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/template_2.xml" value="0.21" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/template_3.xml" value="0.33" />
-        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/template_4.xml" value="0.25" />
+        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/template_4.xml" value="0.23275862068965517" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/template_5.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/template_6.xml" value="0.25" />
-        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/template_7.xml" value="0.25" />
+        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/template_6.xml" value="0.23275862068965517" />
+        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/template_7.xml" value="0.22" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/template_8.xml" value="0.25" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/template_9.xml" value="0.25" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/widgets_menu.xml" value="0.5" />
+        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2203125" />
       </map>
     </option>
   </component>

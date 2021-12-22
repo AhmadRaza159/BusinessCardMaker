@@ -21,6 +21,8 @@
             android:fitsSystemWindows="true"
             app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
             app:contentScrim="@drawable/banner"
+
+
             >
 
 
@@ -34,14 +36,17 @@
                 android:id="@+id/gardener_collpsingtoolbar_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:collapseIcon="@color/purple_500"
+                app:collapseIcon="@color/purple_700"
                 app:layout_collapseMode="pin">
                 <ImageView
                     android:id="@+id/home_setting"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_baseline_settings_24"
+                    android:layout_width="35dp"
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:layout_height="35dp"
+                    android:src="@drawable/menu_black"
+                    android:layout_gravity="center_vertical"
                      />
+
 
             </androidx.appcompat.widget.Toolbar>
 
@@ -95,6 +100,7 @@
 
             <ScrollView
                 android:id="@+id/mainmenu_plant_list"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView"
@@ -109,13 +115,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        app:cardCornerRadius="10dp"
                         android:elevation="5dp">
 
                         <ImageButton
                             android:id="@+id/card_temp_1"
+                            android:foreground="?selectableItemBackgroundBorderless"
                             android:layout_width="match_parent"
-                            android:layout_height="250dp"
+                            android:layout_height="230dp"
                             android:scaleType="centerCrop"
+                            android:background="@android:color/transparent"
                             android:src="@drawable/c1" />
                     </androidx.cardview.widget.CardView>
 
@@ -123,13 +132,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        app:cardCornerRadius="10dp"
                         android:elevation="5dp">
 
                         <ImageButton
                             android:id="@+id/card_temp_2"
+                            android:foreground="?selectableItemBackgroundBorderless"
                             android:layout_width="match_parent"
-                            android:layout_height="250dp"
+                            android:layout_height="230dp"
                             android:scaleType="centerCrop"
+                            android:background="@android:color/transparent"
                             android:src="@drawable/c2" />
                     </androidx.cardview.widget.CardView>
 
@@ -137,13 +149,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        app:cardCornerRadius="10dp"
                         android:elevation="5dp">
 
                         <ImageButton
                             android:id="@+id/card_temp_3"
+                            android:foreground="?selectableItemBackgroundBorderless"
                             android:layout_width="match_parent"
-                            android:layout_height="250dp"
+                            android:layout_height="230dp"
                             android:scaleType="centerCrop"
+                            android:background="@android:color/transparent"
                             android:src="@drawable/c3" />
                     </androidx.cardview.widget.CardView>
 
@@ -151,12 +166,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        app:cardCornerRadius="10dp"
                         android:elevation="5dp">
 
                         <ImageButton
                             android:id="@+id/card_temp_4"
                             android:layout_width="match_parent"
-                            android:layout_height="250dp"
+                            android:layout_height="230dp"
+                            android:foreground="?selectableItemBackgroundBorderless"
+                            android:background="@android:color/transparent"
                             android:scaleType="centerCrop"
                             android:src="@drawable/c4" />
                     </androidx.cardview.widget.CardView>
@@ -165,12 +183,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        app:cardCornerRadius="10dp"
                         android:elevation="5dp">
 
                         <ImageButton
                             android:id="@+id/card_temp_5"
+                            android:background="@android:color/transparent"
+                            android:foreground="?selectableItemBackgroundBorderless"
                             android:layout_width="match_parent"
-                            android:layout_height="250dp"
+                            android:layout_height="230dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/c5" />
                     </androidx.cardview.widget.CardView>
@@ -179,12 +200,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        app:cardCornerRadius="10dp"
                         android:elevation="5dp">
 
                         <ImageButton
                             android:id="@+id/card_temp_6"
+                            android:background="@android:color/transparent"
+                            android:foreground="?selectableItemBackgroundBorderless"
                             android:layout_width="match_parent"
-                            android:layout_height="250dp"
+                            android:layout_height="230dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/c6" />
                     </androidx.cardview.widget.CardView>
@@ -192,12 +216,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        app:cardCornerRadius="10dp"
                         android:elevation="5dp">
 
                         <ImageButton
                             android:id="@+id/card_temp_7"
+                            android:background="@android:color/transparent"
+                            android:foreground="?selectableItemBackgroundBorderless"
                             android:layout_width="match_parent"
-                            android:layout_height="250dp"
+                            android:layout_height="230dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/c8" />
                     </androidx.cardview.widget.CardView>
@@ -205,25 +232,31 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        app:cardCornerRadius="10dp"
                         android:elevation="5dp">
 
                         <ImageButton
                             android:id="@+id/card_temp_8"
                             android:layout_width="match_parent"
-                            android:layout_height="250dp"
+                            android:layout_height="230dp"
                             android:scaleType="centerCrop"
+                            android:foreground="?selectableItemBackgroundBorderless"
+                            android:background="@android:color/transparent"
                             android:src="@drawable/c7" />
                     </androidx.cardview.widget.CardView>
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        app:cardCornerRadius="10dp"
                         android:elevation="5dp">
 
                         <ImageButton
                             android:id="@+id/card_temp_9"
                             android:layout_width="match_parent"
-                            android:layout_height="250dp"
+                            android:background="@android:color/transparent"
+                            android:foreground="?selectableItemBackgroundBorderless"
+                            android:layout_height="230dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/c9" />
                     </androidx.cardview.widget.CardView>
@@ -231,12 +264,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        app:cardCornerRadius="10dp"
                         android:elevation="5dp">
 
                         <ImageButton
                             android:id="@+id/card_temp_10"
                             android:layout_width="match_parent"
-                            android:layout_height="250dp"
+                            android:background="@android:color/transparent"
+                            android:foreground="?selectableItemBackgroundBorderless"
+                            android:layout_height="230dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/c10" />
                     </androidx.cardview.widget.CardView>
@@ -244,12 +280,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        app:cardCornerRadius="10dp"
                         android:elevation="5dp">
 
                         <ImageButton
                             android:id="@+id/card_temp_11"
                             android:layout_width="match_parent"
-                            android:layout_height="250dp"
+                            android:layout_height="230dp"
+                            android:background="@android:color/transparent"
+                            android:foreground="?selectableItemBackgroundBorderless"
                             android:scaleType="centerCrop"
                             android:src="@drawable/c11" />
                     </androidx.cardview.widget.CardView>
@@ -257,12 +296,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        app:cardCornerRadius="10dp"
                         android:elevation="5dp">
 
                         <ImageButton
                             android:id="@+id/card_temp_12"
                             android:layout_width="match_parent"
-                            android:layout_height="250dp"
+                            android:background="@android:color/transparent"
+                            android:foreground="?selectableItemBackgroundBorderless"
+                            android:layout_height="230dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/c12" />
                     </androidx.cardview.widget.CardView>

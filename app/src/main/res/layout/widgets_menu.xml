@@ -4,13 +4,14 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/widget_main_menu"
-    android:translationY="-89dp">
+    android:translationY="-85dp">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/items_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:foregroundGravity="center"
         android:elevation="16dp"
+        android:layout_marginHorizontal="20dp"
         android:background="@drawable/menue_back_rec"
         android:layout_alignParentStart="true"
 
