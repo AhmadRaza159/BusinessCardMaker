@@ -8,17 +8,18 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="700dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
         android:background="@drawable/setting_back_rec"
         android:elevation="15dp">
 
         <LinearLayout
             android:id="@+id/setting_home"
-            android:foreground="?selectableItemBackgroundBorderless"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:layout_marginTop="300dp"
+            android:foreground="?selectableItemBackgroundBorderless"
             android:orientation="horizontal"
             android:padding="10dp">
 
@@ -37,16 +38,17 @@
 
                 android:text="Home"
                 android:textColor="@color/black"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
 
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/setting_user_detail"
-            android:foreground="?selectableItemBackgroundBorderless"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/setting_home"
             android:layout_marginHorizontal="10dp"
+            android:foreground="?selectableItemBackgroundBorderless"
             android:orientation="horizontal"
             android:padding="10dp">
 
@@ -56,6 +58,7 @@
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/ic_baseline_format_align_left_24"
                 app:tint="@color/black" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,16 +66,43 @@
                 android:layout_marginStart="10dp"
                 android:text="User Details"
                 android:textColor="@color/black"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/setting_share"
-            android:foreground="?selectableItemBackgroundBorderless"
+            android:id="@+id/setting_my_creation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/setting_user_detail"
             android:layout_marginHorizontal="10dp"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_baseline_storage_24"
+                app:tint="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:text="My Creation"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/setting_share"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/setting_my_creation"
+            android:layout_marginHorizontal="10dp"
+            android:foreground="?selectableItemBackgroundBorderless"
             android:orientation="horizontal"
             android:padding="10dp">
 
@@ -96,11 +126,11 @@
 
         <LinearLayout
             android:id="@+id/setting_rate"
-            android:foreground="?selectableItemBackgroundBorderless"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/setting_share"
             android:layout_marginHorizontal="10dp"
+            android:foreground="?selectableItemBackgroundBorderless"
             android:orientation="horizontal"
             android:padding="10dp">
 
@@ -154,11 +184,11 @@
 
         <LinearLayout
             android:id="@+id/setting_more"
-            android:foreground="?selectableItemBackgroundBorderless"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/setting_policy"
             android:layout_marginHorizontal="10dp"
+            android:foreground="?selectableItemBackgroundBorderless"
             android:orientation="horizontal"
             android:padding="10dp">
 
@@ -177,17 +207,17 @@
 
                 android:text="More Apps"
                 android:textColor="@color/black"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/setting_exit"
-            android:foreground="?selectableItemBackgroundBorderless"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/setting_more"
             android:layout_marginHorizontal="10dp"
+            android:foreground="?selectableItemBackgroundBorderless"
             android:orientation="horizontal"
             android:padding="10dp">
 
@@ -197,6 +227,7 @@
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/ic_round_exit_to_app_24"
                 app:tint="@color/black" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -204,7 +235,7 @@
                 android:layout_marginStart="10dp"
                 android:text="Exit"
                 android:textColor="@color/black"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
         </LinearLayout>
     </RelativeLayout>
 
@@ -216,16 +247,16 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/setting_banner_icon"
-            android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:elevation="5dp"
             app:cardCornerRadius="20dp">
 
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/bsns_crd_mkr_logo"/>
+                android:src="@drawable/bsns_crd_mkr_logo" />
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -234,14 +265,11 @@
             android:layout_below="@+id/setting_banner_icon"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
-            android:text="Business &amp; Visiting Card maker"
+            android:text="@string/app_name"
             android:textColor="@color/black"
             android:textSize="20dp"
 
             />
-
-
-
     </RelativeLayout>
 
 

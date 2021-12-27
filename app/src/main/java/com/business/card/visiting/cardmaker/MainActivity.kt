@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         Log.d("LogKey", " type")
         home_appbarlayout.addOnOffsetChangedListener(OnOffsetChangedListener { appBarLayout, verticalOffset ->
             if (Math.abs(verticalOffset) - appBarLayout.totalScrollRange == 0) {
-                home_collapsing_toolbar.title="Business & Visiting Card maker"
+                home_collapsing_toolbar.title="Business Card Maker"
                 home_setting.setImageDrawable(resources.getDrawable(R.drawable.menu_white))
                 home_collapsing_toolbar.animate().rotation(0f).duration=500
                 home_setting.animate().rotation(180f).duration=500

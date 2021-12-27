@@ -12,8 +12,10 @@
         android:foregroundGravity="center"
         android:elevation="16dp"
         android:layout_marginHorizontal="20dp"
+        app:stackFromEnd="true"
         android:background="@drawable/menue_back_rec"
         android:layout_alignParentStart="true"
+        app:reverseLayout="true"
 
         />
     <ImageView
@@ -24,6 +26,7 @@
         android:background="@drawable/menue_back_rec"
         android:layout_height="25dp"
         android:elevation="16dp"
+        android:foreground="?selectableItemBackgroundBorderless"
         android:layout_below="@id/items_list"
         android:layout_centerHorizontal="true"
         app:tint="#5A5A5A" />
@@ -34,6 +37,7 @@
         android:paddingHorizontal="20dp"
         android:layout_height="wrap_content"
         android:elevation="16dp"
+        android:foreground="?selectableItemBackgroundBorderless"
         android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
         android:layout_below="@id/items_list"
         android:layout_centerHorizontal="true"

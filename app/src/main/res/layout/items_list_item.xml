@@ -32,6 +32,7 @@
             android:layout_marginStart="5dp"
             android:layout_toRightOf="@+id/menu_item_logo"
             android:text="Designation"
+            android:textSize="12dp"
 
             android:textColor="@color/black" />
     </RelativeLayout>

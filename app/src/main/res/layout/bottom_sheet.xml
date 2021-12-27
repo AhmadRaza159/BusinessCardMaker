@@ -55,6 +55,88 @@
 
 
             </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/bottom_sheet_image_viewer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center">
+
+                <RelativeLayout
+                    android:id="@+id/sdu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View Business Card's"
+                        android:layout_centerInParent="true"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"/>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/sdb"
+                    android:layout_below="@+id/sdu"
+                    android:layout_width="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/image_viewer_front"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:layout_width="120dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="15dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="7dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Front View"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="14dp"
+                            android:layout_margin="15dp"/>
+
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/image_viewer_back"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:layout_toRightOf="@+id/image_viewer_front"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="120dp"
+                        android:layout_height="50dp"
+                        app:cardBackgroundColor="@color/white"
+                        android:elevation="15dp"
+                        app:cardCornerRadius="7dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Back View"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="14dp"
+                            android:layout_margin="15dp"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/bottom_sheet_color"

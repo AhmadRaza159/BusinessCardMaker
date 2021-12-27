@@ -53,9 +53,9 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import android.R.attr.path
-
-
-
+import android.os.Handler
+import android.text.TextUtils
+import kotlinx.android.synthetic.main.activity_user_details.*
 
 
 class EditCardActivity : AppCompatActivity() {
@@ -76,6 +76,7 @@ class EditCardActivity : AppCompatActivity() {
     private var activeView: DragableView? = null
     private var bool = true
     private var flag: String = ""
+    private var fileName: String = ""
     var onTextChangeFlag = false
     var imageSizeFlag = false
     private lateinit var storagePermission: Array<String>
@@ -92,6 +93,7 @@ class EditCardActivity : AppCompatActivity() {
 
         var code = intent.getIntExtra("code", 1)
         storagePermission = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+
         if (code == 1) {
             setContentView(R.layout.template_1)
             c_company_name.visibility = View.GONE
@@ -145,19 +147,19 @@ class EditCardActivity : AppCompatActivity() {
         } else if (code == 7) {
             setContentView(R.layout.template_7)
             Glide.with(applicationContext)
-                .load(R.drawable.card_back_8)
+                .load(R.drawable.card_back_7)
                 .into(frnt_img)
             Glide.with(applicationContext)
-                .load(R.drawable.back_side_8)
+                .load(R.drawable.back_side_7)
                 .into(bck_img)
         } else if (code == 8) {
             setContentView(R.layout.template_8)
             c_company_name.visibility = View.GONE
             Glide.with(applicationContext)
-                .load(R.drawable.card_back_7)
+                .load(R.drawable.card_back_8)
                 .into(frnt_img)
             Glide.with(applicationContext)
-                .load(R.drawable.back_side_7)
+                .load(R.drawable.back_side_8)
                 .into(bck_img)
         } else if (code == 9) {
             setContentView(R.layout.template_9)
@@ -211,6 +213,14 @@ class EditCardActivity : AppCompatActivity() {
         addr.text = sharedPref.getString("user_addr","Your Address")
         company_name.text = sharedPref.getString("user_company_name","Company Name")
 
+        fileName=name.text.toString()
+
+
+            Handler().postDelayed({
+                Toast.makeText(getApplicationContext(),"Click on any item to edit it or drag them to a desired location!",Toast.LENGTH_LONG).show()
+
+        }, 700)
+
 
 
 
@@ -241,6 +251,7 @@ class EditCardActivity : AppCompatActivity() {
 
         items_list.layoutManager =
             LinearLayoutManager(applicationContext, LinearLayoutManager.HORIZONTAL, true)
+
         adapter = ItemsListAdapter(applicationContext, widgetList, object : ItemsListInterface {
             @RequiresApi(Build.VERSION_CODES.O)
             override fun onClick(model: DragableView, img: ImageView) {
@@ -257,6 +268,9 @@ class EditCardActivity : AppCompatActivity() {
                     }
                     else if(model.tooltipText=="Address"){
                         c_content_des_address.visibility = View.GONE
+                    }
+                    else if(model.tooltipText=="Name"){
+                        fileName= sharedPref.getString("user_name","Your Name").toString()
                     }
                     img.setImageDrawable(resources.getDrawable(R.drawable.menu_invisble))
                 } else if (model.visibility == View.GONE) {
@@ -364,7 +378,7 @@ class EditCardActivity : AppCompatActivity() {
                 save_btn.animate().translationX(0f)
                 bck_frnt_btn.animate().translationX(0f)
                 widget_list_opener.animate().rotation(0f)
-                widget_main_menu.animate().translationY(-250f)
+                widget_main_menu.animate().translationY(items_list.height*-1f)
             } else {
                 BottomSheetBehavior.from(sheeeet).state = BottomSheetBehavior.STATE_COLLAPSED
                 side_menu.animate().translationX(400F)
@@ -383,7 +397,8 @@ class EditCardActivity : AppCompatActivity() {
         mName.viewInterface = object : DragableView.ViewInterface {
             override fun setText(view: TextView?) {
                 activeImage = null
-                widget_main_menu.animate().translationY(-250f)
+                widget_main_menu.animate().translationY(items_list.height*-1f)
+                widget_list_opener.animate().rotation(0f)
                 save_btn.animate().translationX(400F)
                 bck_frnt_btn.animate().translationX(-400f)
                 btn_style.visibility = View.VISIBLE
@@ -420,7 +435,8 @@ class EditCardActivity : AppCompatActivity() {
         mDes.viewInterface = object : DragableView.ViewInterface {
             override fun setText(view: TextView?) {
                 activeImage = null
-                widget_main_menu.animate().translationY(-250f)
+                widget_main_menu.animate().translationY(items_list.height*-1f)
+                widget_list_opener.animate().rotation(0f)
                 save_btn.animate().translationX(400F)
                 bck_frnt_btn.animate().translationX(-400f)
                 btn_style.visibility = View.VISIBLE
@@ -456,7 +472,8 @@ class EditCardActivity : AppCompatActivity() {
         c_addr.viewInterface = object : DragableView.ViewInterface {
             override fun setText(view: TextView?) {
                 activeImage = null
-                widget_main_menu.animate().translationY(-250f)
+                widget_main_menu.animate().translationY(items_list.height*-1f)
+                widget_list_opener.animate().rotation(0f)
                 save_btn.animate().translationX(400F)
                 bck_frnt_btn.animate().translationX(-400f)
                 btn_style.visibility = View.VISIBLE
@@ -492,7 +509,8 @@ class EditCardActivity : AppCompatActivity() {
         c_web.viewInterface = object : DragableView.ViewInterface {
             override fun setText(view: TextView?) {
                 activeImage = null
-                widget_main_menu.animate().translationY(-250f)
+                widget_main_menu.animate().translationY(items_list.height*-1f)
+                widget_list_opener.animate().rotation(0f)
                 save_btn.animate().translationX(400F)
                 bck_frnt_btn.animate().translationX(-400f)
                 btn_style.visibility = View.VISIBLE
@@ -528,7 +546,8 @@ class EditCardActivity : AppCompatActivity() {
         c_mail.viewInterface = object : DragableView.ViewInterface {
             override fun setText(view: TextView?) {
                 activeImage = null
-                widget_main_menu.animate().translationY(-250f)
+                widget_main_menu.animate().translationY(items_list.height*-1f)
+                widget_list_opener.animate().rotation(0f)
                 save_btn.animate().translationX(400F)
                 bck_frnt_btn.animate().translationX(-400f)
                 btn_style.visibility = View.VISIBLE
@@ -564,7 +583,8 @@ class EditCardActivity : AppCompatActivity() {
         c_phone.viewInterface = object : DragableView.ViewInterface {
             override fun setText(view: TextView?) {
                 activeImage = null
-                widget_main_menu.animate().translationY(-250f)
+                widget_main_menu.animate().translationY(items_list.height*-1f)
+                widget_list_opener.animate().rotation(0f)
                 save_btn.animate().translationX(400F)
                 bck_frnt_btn.animate().translationX(-400f)
                 btn_style.visibility = View.VISIBLE
@@ -600,7 +620,8 @@ class EditCardActivity : AppCompatActivity() {
         c_company_name?.viewInterface = object : DragableView.ViewInterface {
             override fun setText(view: TextView?) {
                 activeImage = null
-                widget_main_menu.animate().translationY(-250f)
+                widget_main_menu.animate().translationY(items_list.height*-1f)
+                widget_list_opener.animate().rotation(0f)
                 save_btn.animate().translationX(400F)
                 bck_frnt_btn.animate().translationX(-400f)
                 btn_style.visibility = View.VISIBLE
@@ -641,7 +662,8 @@ class EditCardActivity : AppCompatActivity() {
 
             override fun setImage(view: ImageView?) {
                 activeTextView = null
-                widget_main_menu.animate().translationY(-250f)
+                widget_main_menu.animate().translationY(items_list.height*-1f)
+                widget_list_opener.animate().rotation(0f)
                 BottomSheetBehavior.from(sheeeet).state = BottomSheetBehavior.STATE_COLLAPSED
                 save_btn.animate().translationX(400F)
                 bck_frnt_btn.animate().translationX(-400f)
@@ -687,7 +709,8 @@ class EditCardActivity : AppCompatActivity() {
 
             override fun setImage(view: ImageView?) {
                 activeTextView = null
-                widget_main_menu.animate().translationY(-250f)
+                widget_main_menu.animate().translationY(items_list.height*-1f)
+                widget_list_opener.animate().rotation(0f)
                 BottomSheetBehavior.from(sheeeet).state = BottomSheetBehavior.STATE_COLLAPSED
                 save_btn.animate().translationX(400F)
                 bck_frnt_btn.animate().translationX(-400f)
@@ -729,7 +752,7 @@ class EditCardActivity : AppCompatActivity() {
         }
         mSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                widget_main_menu.animate().translationY(-250f)
+                widget_main_menu.animate().translationY(items_list.height*-1f)
 
                 if (bool)
                     if (flag == "tv") {
@@ -751,7 +774,7 @@ class EditCardActivity : AppCompatActivity() {
         fun getDir(): String {
             val newDir =
                 Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-            val file = File(newDir, "Business & Visiting Card maker")
+            val file = File(newDir, "Business Card Maker")
             if (!file.exists()) file.mkdirs()
             Log.d("pathVal", file.path.toString())
             return file.path
@@ -796,6 +819,10 @@ class EditCardActivity : AppCompatActivity() {
                 dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
                 dialog.setCancelable(false)
                 dialog.setCanceledOnTouchOutside(true)
+                
+                if(TextUtils.isEmpty(fileName)){
+                    fileName= sharedPref.getString("user_name","Your Name").toString()
+                }
 
 
 //            val vto: ViewTreeObserver = theView.viewTreeObserver
@@ -814,13 +841,8 @@ class EditCardActivity : AppCompatActivity() {
 
                 //////////////
                 dialog.save_as_pdf.setOnClickListener {
-                    theView.layout(0, 0, theView.measuredWidth, theView.measuredHeight)
-                    the_back_view.layout(
-                        0,
-                        0,
-                        the_back_view.measuredWidth,
-                        the_back_view.measuredHeight
-                    )
+                    dialog.dismiss()
+
                     val bitmap = Bitmap.createBitmap(
                         theView.measuredWidth,
                         theView.measuredHeight,
@@ -865,10 +887,10 @@ class EditCardActivity : AppCompatActivity() {
                     page2.canvas.drawBitmap(bitmap2, 0F, 0F, null)
                     pdfDocument.finishPage(page2)
 
-                    val filePath = File(getDir(), "${Calendar.getInstance().timeInMillis}.pdf")
+                    val filePath = File(getDir(), "${fileName}_${Calendar.getInstance().timeInMillis}_card.pdf")
                     Log.d("pathVal", filePath.toString())
                     pdfDocument.writeTo(FileOutputStream(filePath))
-                    Toast.makeText(applicationContext, "Done", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(getApplicationContext(),"File saved at ${getDir()}",Toast.LENGTH_SHORT).show()
                     pdfDocument.close()
 
                     val intent = Intent(Intent.ACTION_VIEW)
@@ -899,41 +921,99 @@ class EditCardActivity : AppCompatActivity() {
                 }
 
                 dialog.save_as_image.setOnClickListener {
+                    dialog.dismiss()
                     theView.isDrawingCacheEnabled = true
-                    var bitmap = Bitmap.createBitmap(theView.drawingCache)
+                    var bitmapFront = Bitmap.createBitmap(theView.drawingCache)
                     theView.isDrawingCacheEnabled = false
 
-                    val filePath2 = File(getDir(), "${Calendar.getInstance().timeInMillis}.jpeg")
-                    val stream = FileOutputStream(filePath2)
-                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream)
-                    stream.close()
+                    the_back_view.isDrawingCacheEnabled = true
+                    var bitmapBack = Bitmap.createBitmap(the_back_view.drawingCache)
+                    the_back_view.isDrawingCacheEnabled = false
+
+                    val filePath2Front = File(getDir(), "${fileName}_${Calendar.getInstance().timeInMillis}_front.jpeg")
+                    val streamFront = FileOutputStream(filePath2Front)
+                    bitmapFront.compress(Bitmap.CompressFormat.JPEG, 100, streamFront)
+                    streamFront.close()
+
+                    val filePath2Back = File(getDir(), "${fileName}_${Calendar.getInstance().timeInMillis}_back.jpeg")
+                    val streamBack = FileOutputStream(filePath2Back)
+                    bitmapBack.compress(Bitmap.CompressFormat.JPEG, 100, streamBack)
+                    streamBack.close()
+
+                    Toast.makeText(getApplicationContext(),"Files are saved at ${getDir()}",Toast.LENGTH_SHORT).show()
 
 
-                    val intent = Intent(Intent.ACTION_VIEW)
 
-                    intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-                    intent.addFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY)
+                    bottom_sheet_image_viewer.animate().translationX(0f).duration = 500
+                    bottom_sheet_text.animate().translationX(-1300f)
+                    bottom_sheet_color.animate().translationX(-1300f)
+                    bottom_sheet_font.animate().translationX(-1300f)
+                    bottom_sheet_style.animate().translationX(-1300f)
+                    bottom_sheet_style.visibility = View.GONE
+                    bottom_sheet_color.visibility = View.GONE
+                    bottom_sheet_text.visibility = View.GONE
+                    bottom_sheet_font.visibility = View.GONE
+                    bottom_sheet_image_viewer.visibility = View.VISIBLE
+                    BottomSheetBehavior.from(sheeeet).state = BottomSheetBehavior.STATE_EXPANDED
 
-                    intent.setDataAndType(
-                        FileProvider.getUriForFile(
-                            Objects.requireNonNull(getApplicationContext()),
-                            BuildConfig.APPLICATION_ID + ".provider", filePath2
-                        ), "image/*"
-                    )
-                    try {
-                        startActivity(
-                            Intent.createChooser(
-                                intent,
-                                "Open File"
-                            )
+
+                    image_viewer_front.setOnClickListener {
+                        val intent = Intent(Intent.ACTION_VIEW)
+
+                        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                        intent.addFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY)
+
+                        intent.setDataAndType(
+                            FileProvider.getUriForFile(
+                                Objects.requireNonNull(getApplicationContext()),
+                                BuildConfig.APPLICATION_ID + ".provider", filePath2Front
+                            ), "image/*"
                         )
-                    } catch (unused: ActivityNotFoundException) {
-                        Toast.makeText(
-                            applicationContext,
-                            "No app to read File",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        try {
+                            startActivity(
+                                Intent.createChooser(
+                                    intent,
+                                    "Open File"
+                                )
+                            )
+                        } catch (unused: ActivityNotFoundException) {
+                            Toast.makeText(
+                                applicationContext,
+                                "No app to read File",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
                     }
+                    image_viewer_back.setOnClickListener {
+                        val intent = Intent(Intent.ACTION_VIEW)
+
+                        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                        intent.addFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY)
+
+                        intent.setDataAndType(
+                            FileProvider.getUriForFile(
+                                Objects.requireNonNull(getApplicationContext()),
+                                BuildConfig.APPLICATION_ID + ".provider", filePath2Back
+                            ), "image/*"
+                        )
+                        try {
+                            startActivity(
+                                Intent.createChooser(
+                                    intent,
+                                    "Open File"
+                                )
+                            )
+                        } catch (unused: ActivityNotFoundException) {
+                            Toast.makeText(
+                                applicationContext,
+                                "No app to read File",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
+
+
+
 
                 }
                 dialog.show()
@@ -944,13 +1024,16 @@ class EditCardActivity : AppCompatActivity() {
         }
 
         edit_view.setOnClickListener {
-            widget_main_menu.animate().translationY(-250f)
+            widget_main_menu.animate().translationY(items_list.height*-1f)
             if (flag == "tv") {
                 bottom_sheet_text.animate().translationX(0f).duration = 500
                 bottom_sheet_color.animate().translationX(-1300f)
                 bottom_sheet_font.animate().translationX(-1300f)
                 bottom_sheet_style.animate().translationX(-1300f)
+                bottom_sheet_image_viewer.animate().translationX(-1300f)
+                bottom_sheet_image_viewer.visibility = View.GONE
                 bottom_sheet_style.visibility = View.GONE
+
                 onTextChangeFlag = false
                 input.text.clear()
                 onTextChangeFlag = true
@@ -961,6 +1044,7 @@ class EditCardActivity : AppCompatActivity() {
                 input.doOnTextChanged { text, start, before, count ->
                     if (onTextChangeFlag) {
                         activeTextView?.setText(text.toString())
+                        fileName=text.toString()
                     }
 
                 }
@@ -978,11 +1062,13 @@ class EditCardActivity : AppCompatActivity() {
             }
         }
         btn_color.setOnClickListener {
-            widget_main_menu.animate().translationY(-250f)
+            widget_main_menu.animate().translationY(items_list.height*-1f)
             bottom_sheet_text.animate().translationX(-500f)
             bottom_sheet_font.animate().translationX(-1300f)
             bottom_sheet_color.animate().translationX(0f).duration = 500
             bottom_sheet_style.animate().translationX(-1300f)
+            bottom_sheet_image_viewer.animate().translationX(-1300f)
+            bottom_sheet_image_viewer.visibility = View.GONE
             bottom_sheet_style.visibility = View.GONE
             bottom_sheet_color.visibility = View.VISIBLE
             bottom_sheet_text.visibility = View.GONE
@@ -1046,11 +1132,13 @@ class EditCardActivity : AppCompatActivity() {
 
 
         btn_font.setOnClickListener {
-            widget_main_menu.animate().translationY(-250f)
+            widget_main_menu.animate().translationY(items_list.height*-1f)
             bottom_sheet_text.animate().translationX(-500f)
             bottom_sheet_font.animate().translationX(0f).duration = 500
             bottom_sheet_color.animate().translationX(-1300f)
             bottom_sheet_style.animate().translationX(-1300f)
+            bottom_sheet_image_viewer.animate().translationX(-1300f)
+            bottom_sheet_image_viewer.visibility = View.GONE
             bottom_sheet_style.visibility = View.GONE
             bottom_sheet_color.visibility = View.GONE
             bottom_sheet_text.visibility = View.GONE
@@ -1096,11 +1184,13 @@ class EditCardActivity : AppCompatActivity() {
         }
 
         btn_style.setOnClickListener {
-            widget_main_menu.animate().translationY(-250f)
+            widget_main_menu.animate().translationY(items_list.height*-1f)
             bottom_sheet_text.animate().translationX(-500f)
             bottom_sheet_font.animate().translationX(-1300f)
             bottom_sheet_color.animate().translationX(-1300f)
             bottom_sheet_style.animate().translationX(0f).duration = 500
+            bottom_sheet_image_viewer.animate().translationX(-1300f)
+            bottom_sheet_image_viewer.visibility = View.GONE
             bottom_sheet_style.visibility = View.VISIBLE
             bottom_sheet_color.visibility = View.GONE
             bottom_sheet_text.visibility = View.GONE
@@ -1130,7 +1220,7 @@ class EditCardActivity : AppCompatActivity() {
         }
 
         btn_rotate_right.setOnTouchListener { v, event ->
-            widget_main_menu.animate().translationY(-250f)
+            widget_main_menu.animate().translationY(items_list.height*-1f)
             BottomSheetBehavior.from(sheeeet).state = BottomSheetBehavior.STATE_COLLAPSED
             Log.d("LogKey", event?.action.toString())
             if (flag == "img") {
@@ -1144,7 +1234,7 @@ class EditCardActivity : AppCompatActivity() {
 
         }
         btn_rotate_left.setOnTouchListener { v, event ->
-            widget_main_menu.animate().translationY(-250f)
+            widget_main_menu.animate().translationY(items_list.height*-1f)
             BottomSheetBehavior.from(sheeeet).state = BottomSheetBehavior.STATE_COLLAPSED
             Log.d("LogKey", event?.action.toString())
             if (flag == "img") {

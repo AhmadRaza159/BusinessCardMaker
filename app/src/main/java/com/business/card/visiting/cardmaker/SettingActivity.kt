@@ -1,16 +1,23 @@
 package com.business.card.visiting.cardmaker
 
+import android.Manifest
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_setting.*
 
 class SettingActivity : AppCompatActivity() {
+    private lateinit var storagePermission: Array<String>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_setting)
+        storagePermission = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+
 
         back.setOnClickListener {
             finish()
@@ -34,6 +41,15 @@ class SettingActivity : AppCompatActivity() {
         setting_user_detail.setOnClickListener {
             startActivity(Intent(this,UserDetailsActivity::class.java))
             finish()
+        }
+
+        setting_my_creation.setOnClickListener {
+            if(checkStoragePermission()) {
+                startActivity(Intent(this, MyCreationActivity::class.java))
+            }
+            else{
+                requestStoragePermission()
+            }
         }
 
         setting_rate.setOnClickListener {
@@ -92,6 +108,34 @@ class SettingActivity : AppCompatActivity() {
 
         setting_exit.setOnClickListener {
             finishAffinity()
+        }
+    }
+    fun requestStoragePermission() {
+        ActivityCompat.requestPermissions(this, storagePermission, 11)
+    }
+
+    fun checkStoragePermission(): Boolean {
+        var a= ContextCompat.checkSelfPermission(
+            this,
+            Manifest.permission.READ_EXTERNAL_STORAGE
+        ) == PackageManager.PERMISSION_GRANTED
+
+        var b= ContextCompat.checkSelfPermission(
+            this,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+        ) == PackageManager.PERMISSION_GRANTED
+
+        return a&&b
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (checkStoragePermission()){
+            startActivity(Intent(this, MyCreationActivity::class.java))
         }
     }
 }

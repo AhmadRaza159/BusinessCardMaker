@@ -20,12 +20,16 @@
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/font/montserrat.xml" value="0.234375" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/activity_edit_card.xml" value="0.18854166666666666" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/activity_main.xml" value="0.1880095923261391" />
+        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/activity_my_creation.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/activity_privacy_policy.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/activity_setting.xml" value="0.22" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/activity_user_details.xml" value="0.20364583333333333" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/bottom_sheet.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/edit_buttons.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/fragment_jpeg.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/fragment_pdf.xml" value="0.19010416666666666" />
+        <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/item_downloaded.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/items_list_item.xml" value="0.5" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/menu_opener_back.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Projects/BusinessCardMaker/app/src/main/res/layout/rename_diloag.xml" value="0.17552083333333332" />
